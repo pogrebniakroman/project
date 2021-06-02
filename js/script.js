@@ -1,56 +1,69 @@
 
-// const numberOfFilms = +prompt('How many films you watch?', '');
+  'use strict';
+ let numberOfFilms ;
 
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
+ function start(){
+numberOfFilms = +prompt('How match film you movie', '');
 
-// const a = prompt('One is last watched film', ''),
-//       b = prompt('How you value film?', ''),
-//       c = prompt('One is last watched film', ''),
-//       d = prompt('How you value film?', '');
+while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+    numberOfFilms = +prompt('How match film you movie', '');
+}
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
-
-// console.log(personalMovieDB);
-
-  "use strict";
-
- if(4==4){
-     console.log('Ok');
- } else{
-     console.log('Error');
- }
- const num = 50;
-
- if(num < 49){
-     console.log('Error');
- }else if (num > 100){
-     console.log('Many');
- } else{
-     console.log('Ok!');
  }
 
- (num == 50) ? console.log('Ok!') : console.log('Error');
+ start();
 
- switch(num){
-     case 49:
-         console.log('Incorrect');
-         break;
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+ };
 
-         case 100:
-         console.log('Incorrect');
-         break;
+   function rememberMyFilms(){
+    for(let i = 0; i < 2; i++){
+        const a = prompt('One is last watched film', ''),
+             b = prompt('How you value film?', '');
+       
+             if(a != null && b != null && a != '' && b != '' && a.length < 50){
+                 personalMovieDB.movies[a] = b;
+                 console.log('done');
+             } else {
+                 console.log('error');
+                 i--;
+             }
+          }
+   }
 
-         case 50:
-         console.log('Correct');
-         break;
-         default:
-             console.log('All values incorrect');
-             break;
- }
+  //rememberMyFilms();
+
+   function detectPersonalLevel(){
+    if (personalMovieDB.count < 10){
+        console.log("Movies litle films");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log('You classic viewer');
+    } else if (personalMovieDB.count >=30) {
+        console.log('You kinoman');
+    } else{
+        console.log('An error has occured');
+    }
+   }
+
+//    detectPersonalLevel();
+
+   function showMyDB(hidden){
+       if(!hidden){
+           console.log(personalMovieDB);
+       }
+   }
+   showMyDB(personalMovieDB.privat);
+
+   function writeYourGenres(){
+       for(let i = 1; i <=3; i++){
+           const genre = prompt(`You love genre is numbered ${i}`);
+           personalMovieDB.genres[i-1] = genre;
+       }
+       }
+       writeYourGenres();
+
