@@ -1,4 +1,4 @@
-
+/* 
   'use strict';
  let numberOfFilms ;
 
@@ -66,4 +66,93 @@ const personalMovieDB = {
        }
        }
        writeYourGenres();
+
+ */
+
+     //  "use strict";
+/* 
+       function first(){
+           setTimeout(function(){
+               console.log(1);
+           }, 500);
+       }
+
+       function second(){
+           console.log(2);
+       }
+
+       first();
+       second();
+
+       function learnJS(lang, callback){
+           console.log(`I learning: ${lang}`);
+           callback();
+       }
+
+       function done(){
+        console.log('I go it lesson');
+       }
+
+       learnJS('JavaScript', done); */
+
+      /*  "use strict";
+
+       const options = {
+           name: 'test',
+           width: 1024,
+           height: 1024,
+           colors:{
+               border: 'black',
+               bg: 'red'
+           }
+       };
+
+       console.log(options.name);
+
+       delete options.name;
+
+       console.log(options);
+
+       for(let key in options){
+           console.log(`Property ${key} have value ${options[key]}`);
+       } */
+
+       "use strict";
+
+       const options = {
+           name: 'test',
+           width: 1024,
+           height: 1024,
+           colors:{
+               border: 'black',
+               bg: 'red'
+           },
+           makeTest: function(){
+               console.log('Test');
+           }
+
+       };
+
+       options.makeTest();
+
+       const {border, bg} = options.colors;
+
+       console.log(border, bg);
+
+    //    console.log(Object.keys(options).length);
+
+    //    console.log(options.name);
+
+    //    delete options.name;
+
+    //    console.log(options);
+
+    //    let counter = 0;
+
+    //    for(let key in options){
+    //        console.log(`Property ${key} have value ${options[key]}`);
+    //        counter++;
+    //    }
+
+    //    console.log(counter);
 
